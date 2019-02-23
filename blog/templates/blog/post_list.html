@@ -7,16 +7,12 @@
             <h1><a href="/">Ana Banana's bloguinho</a></h1>
         </div>
 
-        <div>
-            <p>geschrieben an: 22/fev/2019</p>
-            <h2><a href="">Erste post</a></h2>
-            <p>Batatinha quando nasce, <strike>se esparrama pelo chão </strike> espalha ramas pelo chão!</p>
-        </div>
-
-        <div>
-            <p>geschrieben an: 14.06.2014, 12:14</p>
-            <h2><a href="">Zweite post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
+        {% for post in posts %}
+          <div>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+          </div>
+        {% endfor %}
     </body>
 </html>
